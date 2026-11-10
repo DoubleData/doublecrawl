@@ -1,0 +1,11 @@
+{
+  "name": "doublecrawl",
+  "owner": { "name": "DoubleData" },
+  "plugins": [
+    {
+      "name": "doublecrawl",
+      "source": "./plugins/doublecrawl",
+      "description": "Fetch web pages through DoubleCrawl from Claude Code"
+    }
+  ]
+}

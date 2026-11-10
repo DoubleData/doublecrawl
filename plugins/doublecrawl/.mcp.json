@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "doublecrawl": {
+      "type": "http",
+      "url": "${DOUBLECRAWL_MCP_URL:-https://mcp.doublecrawl.com/mcp}"
+    }
+  }
+}
