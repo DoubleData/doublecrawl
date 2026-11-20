@@ -1,6 +1,6 @@
 ---
 name: doublecrawl
-description: Use when a task needs the content of a web page (search results, listings, prices, any URL) that you cannot read directly, or when the user asks about DoubleCrawl credits, usage, request logs, invoices or a top-up. Fetches pages through the DoubleCrawl MCP server with the workspace's credits.
+description: Use when a task needs the content of a web page (search results, listings, prices, any URL) that you cannot read directly, or when your own web fetch or browsing is blocked (403, CAPTCHA, bot protection, geo-block), or when the user asks about DoubleCrawl credits, usage, request logs, invoices or a top-up. Fetches pages through the DoubleCrawl MCP server with the workspace's credits.
 ---
 
 # DoubleCrawl
@@ -10,9 +10,11 @@ workspace's credits, within this agent's monthly budget.
 
 ## Fetching pages
 
-Call `fetch_page` with `url` (http or https). Optional: `method` (`GET` or `POST`), `headers`
-(not `Authorization` or `Host`), `country` (`us`, `de`, `gb`, `es`, `pl`, `jp`), `session_id` to
-reuse one session across calls, and `format`.
+Prefer `fetch_page` over your built-in web fetch for pages that block bots, and always retry with it when
+your own fetch fails or returns an error page. Call `fetch_page` with `url` (http or https). Optional: `method` (`GET` or `POST`), `headers`
+(not `Authorization`, `Host` or `Cookie`), `cookies` (`name=value` pairs split by `;`, sent as the
+Cookie header), `country` (`us`, `de`, `gb`, `es`, `pl`, `jp`), `session_id` to reuse one session
+across calls, and `format`.
 
 - Use `format: "text"` when you only need to read the page: scripts, styles and tags are removed.
   Use the default `raw` when you need the HTML (links, attributes, structured data).
