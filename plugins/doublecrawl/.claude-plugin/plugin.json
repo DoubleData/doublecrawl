@@ -1,6 +1,6 @@
 {
   "name": "doublecrawl",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fetch web pages through DoubleCrawl from Claude Code, check credits and ask a person for a top-up",
   "author": { "name": "DoubleData" },
   "homepage": "https://doublecrawl.com"
